@@ -1,4 +1,30 @@
 ---
 import Navbar from '../components/Navbar.astro';
 ---
-<Navbar />
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={`${Astro.generator}`} />
+		<title>Astro Basics</title>
+		<link rel="stylesheet" href="../styles/global.css" />
+	</head>
+	<body class="bg-gray-100 text-gray-900">
+		<Navbar />
+		<main class="container mx-auto p-4">
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
