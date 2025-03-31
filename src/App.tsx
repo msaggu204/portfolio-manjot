@@ -35,12 +35,23 @@ function App() {
   }, []);
 
   function getPath() {
-    const path = window.location.pathname;
+    const path = window.location.pathname.replace("/portfolio-manjot", "") || "/";
     return path + window.location.hash;
   }
 
   const isValidPath = (path: string) => {
-    const validPaths = ["/", "/#workexperience", "/#projects", "/#volunteering", "/#home"];
+    const validPaths = [
+      "/",
+      "/#workexperience",
+      "/#projects",
+      "/#volunteering",
+      "/#home",
+      "/portfolio-manjot/",
+      "/portfolio-manjot/#workexperience",
+      "/portfolio-manjot/#projects",
+      "/portfolio-manjot/#volunteering",
+      "/portfolio-manjot/#home"
+    ];
     return validPaths.includes(path);
   };
 
