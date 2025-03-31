@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/portfolio-manjot/static/css/main.e5a83b37.css",
+    "main.js": "/portfolio-manjot/static/js/main.46486213.js",
+    "static/js/453.1407b060.chunk.js": "/portfolio-manjot/static/js/453.1407b060.chunk.js",
+    "static/media/android.png": "/portfolio-manjot/static/media/android.d0057cde8fff48d1b2e4.png",
+    "static/media/formulaSAE.png": "/portfolio-manjot/static/media/formulaSAE.79c566a649101fce2be7.png",
+    "static/media/RWC.png": "/portfolio-manjot/static/media/RWC.742eb81d601e63ad952e.png",
+    "static/media/manjot1.png": "/portfolio-manjot/static/media/manjot1.73bbda87aadcbdd49d18.png",
+    "index.html": "/portfolio-manjot/index.html",
+    "static/media/email.svg": "/portfolio-manjot/static/media/email.b0bd741a709bc2671f1fdd27419ccf87.svg",
+    "static/media/github.svg": "/portfolio-manjot/static/media/github.d4577cfbb9306cfe891b2ac5c1586b8c.svg",
+    "static/media/cv.svg": "/portfolio-manjot/static/media/cv.932f29e16434768d5919afa88bd5ded4.svg",
+    "static/media/linkedin.svg": "/portfolio-manjot/static/media/linkedin.d68abd69a98d9f939aa8bf9c3a02527d.svg",
+    "main.e5a83b37.css.map": "/portfolio-manjot/static/css/main.e5a83b37.css.map",
+    "main.46486213.js.map": "/portfolio-manjot/static/js/main.46486213.js.map",
+    "453.1407b060.chunk.js.map": "/portfolio-manjot/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5a83b37.css",
+    "static/js/main.46486213.js"
+  ]
+}
