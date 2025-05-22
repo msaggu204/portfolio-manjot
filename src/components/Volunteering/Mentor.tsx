@@ -6,14 +6,13 @@ const mentor: React.FC = () => {
     <>
       <div className="mentor-container">
         <div className="mentor-position">Peer Mentor</div>
-        <div className="mentor-date">January 2024 - Present</div>
+        <div className="mentor-date">January 2024 - May 2025</div>
         <div className="mentor-club">Engineering Students' Society - Academic Guidance Program</div>
         <ul className="mentor-points">
-            <li>Plan to greatly increase financial transparency across the club, especially in HackED & Geer Week.</li>
-            <li>Will replace most current junior exec roles by giving each portfolio 2-4 "officer" roles that are interview-based, in order to ensure greater committment.</li>
-            <li>Aiming for complete club financial self-sufficiency through greatly increasing number of sponsors at our major events - Aether & HackED.</li>
-            <li>Planning to increase oversight across HackED and fully integrating it into the club by adding clauses in the constitution requiring full transparency and approval for a financial decisions.</li>
-            <li>I will continue working on inter-university partnerships as well - such as an expansion of our current one with UBC's CS club (which I cultivated).</li>
+            <li>Provided academic guidance and mentorship to first- and second-year engineering students through the ESS Academic Guidance Program.</li>
+            <li>Offered one-on-one support with study strategies, course selection, and university life adaptation.</li>
+            <li>Collaborated with fellow mentors to host group workshops and Q&A sessions addressing common academic challenges.</li>
+            <li>Actively promoted a supportive, inclusive environment that encourages student engagement and success.</li>
         </ul>
       </div>
     </>
