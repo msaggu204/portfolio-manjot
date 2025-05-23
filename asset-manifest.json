@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio-manjot/static/css/main.e5a83b37.css",
-    "main.js": "/portfolio-manjot/static/js/main.3ccb03b0.js",
+    "main.js": "/portfolio-manjot/static/js/main.d10fba86.js",
     "static/js/453.1407b060.chunk.js": "/portfolio-manjot/static/js/453.1407b060.chunk.js",
     "static/media/android.png": "/portfolio-manjot/static/media/android.d0057cde8fff48d1b2e4.png",
     "static/media/formulaSAE.png": "/portfolio-manjot/static/media/formulaSAE.79c566a649101fce2be7.png",
@@ -13,11 +13,11 @@
     "static/media/cv.svg": "/portfolio-manjot/static/media/cv.932f29e16434768d5919afa88bd5ded4.svg",
     "static/media/linkedin.svg": "/portfolio-manjot/static/media/linkedin.d68abd69a98d9f939aa8bf9c3a02527d.svg",
     "main.e5a83b37.css.map": "/portfolio-manjot/static/css/main.e5a83b37.css.map",
-    "main.3ccb03b0.js.map": "/portfolio-manjot/static/js/main.3ccb03b0.js.map",
+    "main.d10fba86.js.map": "/portfolio-manjot/static/js/main.d10fba86.js.map",
     "453.1407b060.chunk.js.map": "/portfolio-manjot/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e5a83b37.css",
-    "static/js/main.3ccb03b0.js"
+    "static/js/main.d10fba86.js"
   ]
 }
