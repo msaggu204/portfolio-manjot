@@ -19,7 +19,8 @@ const FourthPage: React.FC = () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove("visible");
           }
         });
       },
@@ -27,7 +28,7 @@ const FourthPage: React.FC = () => {
     );
 
     const targets = document.querySelectorAll(
-      ".mentor-points, .comp-points, .vp-points, .tax-points"
+      ".mentor-container, .mentor-points, .comp-container, .comp-points, .vp-container, .vp-points, .tax-container, .tax-points"
     );
     targets.forEach(target => observer.observe(target));
 

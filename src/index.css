@@ -1796,6 +1796,12 @@ FourthPage.tsx Classes and styling starts here
   font-weight: 600;
   padding: 0;
   margin: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.mentor-points.visible {
+  opacity: 1;
 }
 
 .mentor-points li {
@@ -1815,6 +1821,27 @@ FourthPage.tsx Classes and styling starts here
   grid-column: 2;
   grid-row: 2;
   border-left: 1px solid white;
+}
+
+.comp-points {
+  grid-row: 4;
+  grid-column: 1;
+  position: relative;
+  list-style-type: none;
+  font-family: "Calibri", sans-serif;
+  font-size: 95%;
+  top: 5%;
+  color: rgb(255, 175, 175);
+  left: 2%;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.comp-points.visible {
+  opacity: 1;
 }
 
 .circle-container {
@@ -1860,6 +1887,27 @@ FourthPage.tsx Classes and styling starts here
   border-left: 1px solid white;
 }
 
+.vp-points {
+  grid-row: 4;
+  grid-column: 1;
+  position: relative;
+  list-style-type: none;
+  font-family: "Calibri", sans-serif;
+  font-size: 95%;
+  top: 5%;
+  color: rgb(255, 175, 175);
+  left: 2%;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.vp-points.visible {
+  opacity: 1;
+}
+
 .circle3-container {
   width: 100px;
   height: 100px;
@@ -1879,6 +1927,27 @@ FourthPage.tsx Classes and styling starts here
   grid-column: 2;
   grid-row: 4;
   border-left: 1px solid white;
+}
+
+.tax-points {
+  grid-row: 4;
+  grid-column: 1;
+  position: relative;
+  list-style-type: none;
+  font-family: "Calibri", sans-serif;
+  font-size: 95%;
+  top: 5%;
+  color: rgb(255, 175, 175);
+  left: 2%;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.tax-points.visible {
+  opacity: 1;
 }
 
 .circle4-container {
