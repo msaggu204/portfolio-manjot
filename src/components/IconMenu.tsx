@@ -17,7 +17,7 @@ const IconMenu: React.FC = () => {
         <a href="mailto:msaggu@ualberta.ca">
           <img src={email} className="emaillogo glow-on-hover scale-on-hover click-effect" alt="emaillogo" />
         </a>
-        <a href="/resume.html" target="_blank" rel="noreferrer">
+        <a href={`${process.env.PUBLIC_URL}/resume.html`} target="_blank" rel="noreferrer">
           <img src={cv} className="cvlogo glow-on-hover scale-on-hover click-effect" alt="cvlogo" />
         </a>
       </div>
