@@ -1,55 +1,89 @@
-import React, { useState, useEffect } from "react";
-import "./../index.css";
-import Hamburger from "hamburger-react";
+import React, { useState, useEffect } from 'react';
+import styles from './GridHeader.module.css';
+
+const NAV_LINKS = [
+  { label: 'Home',        href: '#home' },
+  { label: 'Experience',  href: '#workexperience' },
+  { label: 'Projects',    href: '#projects' },
+  { label: 'Involvement', href: '#volunteering' },
+  { label: 'Contact',     href: '#contact' },
+] as const;
+
+const MOBILE_NAV_ID = 'mobile-nav';
 
 const GridHeader: React.FC = () => {
-  const [isOpen, setOpen] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
+  const [scrolled, setScrolled]     = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      const newWidth = window.innerWidth;
-      setWidth(newWidth);
-      if (newWidth > 550 && isOpen) {
-        setOpen(false);
-      }
+      if (window.innerWidth > 550) setMobileOpen(false);
     };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [isOpen]);
-
-  const desktopNav = (
-    <>
-      <a href="#home"><div className="name_navbar">Manjot Saggu</div></a>
-      <a href="#workexperience"><div className="work_navbar">Work Experience</div></a>
-      <a href="#projects"><div className="projects_navbar">Projects</div></a>
-      <a href="#volunteering"><div className="volunteering_navbar">Leadership & Involvement</div></a>
-    </>
-  );
-
-  const mobileNav = (
-    <>
-      <div className={`name_navbar_hamburger ${isOpen ? "open" : ""}`}>
-        <a href="#home">Manjot Saggu</a>
-        {isOpen && (
-          <>
-            <a href="#workexperience"><div className="work_navbar_hamburger open">Work Experience</div></a>
-            <a href="#projects"><div className="projects_navbar_hamburger open">Projects</div></a>
-            <a href="#volunteering"><div className="volunteering_navbar_hamburger open">Leadership & Involvement</div></a>
-          </>
-        )}
-      </div>
-      <div className={`hamburger-position ${isOpen ? "open" : ""}`}>
-        <Hamburger color="white" size={16} toggled={isOpen} toggle={setOpen} />
-      </div>
-    </>
-  );
+  const closeMobile = () => setMobileOpen(false);
 
   return (
-    <div className={`wrapper ${isOpen ? "open" : ""}`}>
-      {width > 550 ? desktopNav : mobileNav}
-    </div>
+    <>
+      <nav
+        className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}
+        aria-label="Primary navigation"
+      >
+        <a href="#home" className={styles.brand}>
+          {'<MS />'}
+        </a>
+
+        <ul className={styles.links} role="list">
+          {NAV_LINKS.map(({ label, href }) => (
+            <li key={href}>
+              <a href={href} className={styles.link}>{label}</a>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          className={styles.hamburgerBtn}
+          onClick={() => setMobileOpen((o) => !o)}
+          aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={mobileOpen}
+          aria-controls={MOBILE_NAV_ID}
+        >
+          {mobileOpen ? (
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              <line x1="4" y1="4" x2="18" y2="18" />
+              <line x1="18" y1="4" x2="4" y2="18" />
+            </svg>
+          ) : (
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              <line x1="3" y1="6" x2="19" y2="6" />
+              <line x1="3" y1="11" x2="19" y2="11" />
+              <line x1="3" y1="16" x2="19" y2="16" />
+            </svg>
+          )}
+        </button>
+      </nav>
+
+      <nav
+        id={MOBILE_NAV_ID}
+        aria-label="Mobile navigation"
+        className={`${styles.mobileMenu} ${mobileOpen ? styles.open : ''}`}
+        aria-hidden={!mobileOpen}
+      >
+        {NAV_LINKS.map(({ label, href }) => (
+          <a key={href} href={href} className={styles.mobileLink} onClick={closeMobile} tabIndex={mobileOpen ? 0 : -1}>
+            {label}
+          </a>
+        ))}
+      </nav>
+    </>
   );
 };
 

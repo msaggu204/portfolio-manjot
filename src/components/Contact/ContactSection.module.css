@@ -1,0 +1,251 @@
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Section ──────────────────────────────────── */
+.section {
+  background: rgb(6, 6, 6);
+  padding: 4rem 1.5rem 3rem;
+  border-top: 1px solid #1f1f1f;
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Header ───────────────────────────────────── */
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.header {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 2px;
+  mask-image: linear-gradient(90deg, rgba(0,0,0,0.55) 25%, #000 50%, rgba(0,0,0,0.55) 75%);
+  mask-size: 200%;
+  animation: shimmer 2.5s linear infinite;
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtext {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text-sub);
+  text-align: center;
+  line-height: 1.7;
+  margin: 0 auto 2.5rem;
+  max-width: 520px;
+  font-weight: 500;
+}
+
+/* ── Form ─────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  animation: fadeSlideUp 0.6s ease-out forwards;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-sub);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.input,
+.textarea {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
+  outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--color-accent);
+  background: rgba(187, 0, 0, 0.04);
+  box-shadow: 0 0 0 3px rgba(187, 0, 0, 0.12);
+}
+
+.input:disabled,
+.textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+/* ── Honeypot (visually hidden) ───────────────── */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Form footer ──────────────────────────────── */
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.submitBtn {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.65rem 1.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #cc0000;
+  box-shadow: 0 4px 20px rgba(187, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Spinner ──────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ── Error ────────────────────────────────────── */
+.errorText {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: #ff6060;
+  margin: 0;
+  padding: 0.6rem 0.9rem;
+  background: rgba(255, 60, 60, 0.08);
+  border: 1px solid rgba(255, 60, 60, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Success card ─────────────────────────────── */
+.successCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  animation: fadeSlideUp 0.5s ease-out forwards;
+}
+
+.successIcon {
+  font-size: 2rem;
+  color: #44cc88;
+  background: rgba(68, 204, 136, 0.1);
+  border: 1px solid rgba(68, 204, 136, 0.25);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.successText {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text-sub);
+  margin: 0;
+  text-align: center;
+}
+
+.resetBtn {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text-sub);
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--t-fast), color var(--t-fast);
+}
+
+.resetBtn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text);
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 600px) {
+  .row { grid-template-columns: 1fr; }
+  .formFooter { justify-content: center; }
+  .submitBtn { width: 100%; }
+}

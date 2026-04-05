@@ -6,4 +6,15 @@ Thumbs.db
 
 # Build output
 /build
+/dist
 
+# Environment — never commit secrets
+.env.local
+.env.*.local
+
+# Claude local session files
+.claude/
+
+# Editor
+.vscode/
+.idea/
