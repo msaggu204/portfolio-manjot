@@ -1,0 +1,59 @@
+.page {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 40%, var(--glow-faint), transparent 70%),
+    var(--bg-0);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+  animation: fadeSlideUp 0.7s var(--ease-out) both;
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: clamp(4rem, 15vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  color: var(--text-hi);
+}
+
+.message {
+  color: var(--text-mid);
+  max-width: 40ch;
+}
+
+.homeLink {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  margin-top: var(--space-md);
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--gradient-brand);
+  box-shadow: 0 6px 24px var(--glow-faint);
+  transition: transform var(--t-fast) var(--ease-out), box-shadow var(--t-fast) ease;
+}
+
+.homeLink:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 34px var(--glow);
+}

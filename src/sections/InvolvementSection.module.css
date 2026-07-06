@@ -1,0 +1,15 @@
+.section {
+  background: var(--bg-0);
+  padding: var(--section-pad) 0;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 3rem);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}

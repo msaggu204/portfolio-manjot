@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import styles from './ContactSection.module.css';
+import SectionHeading from '../SectionHeading/SectionHeading';
+import { sectionIndex } from '../../data/sections';
 
 type FormState = 'idle' | 'sending' | 'success' | 'error';
 
@@ -10,6 +12,7 @@ const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  ?? '';
 
 const ContactSection: React.FC = () => {
   const [name, setName]       = useState('');
+  const [email, setEmail]     = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [hp, setHp]           = useState('');        // honeypot — bots fill this
@@ -24,7 +27,9 @@ const ContactSection: React.FC = () => {
     // Honeypot check — silent drop if filled
     if (hp) return;
 
-    if (!name.trim() || !subject.trim() || !message.trim()) return;
+    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) return;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) return;
     if (!configured) {
       setStatus('error');
       return;
@@ -35,11 +40,12 @@ const ContactSection: React.FC = () => {
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
-        { from_name: name.trim(), subject: subject.trim(), message: message.trim() },
+        { from_name: name.trim(), from_email: email.trim(), subject: subject.trim(), message: message.trim() },
         { publicKey: PUBLIC_KEY },
       );
       setStatus('success');
       setName('');
+      setEmail('');
       setSubject('');
       setMessage('');
     } catch {
@@ -52,9 +58,7 @@ const ContactSection: React.FC = () => {
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.inner}>
-        <div className={styles.headerContainer}>
-          <h2 className={styles.header}>Get In Touch</h2>
-        </div>
+        <SectionHeading index={sectionIndex('contact')} title="Get In Touch" />
         <p className={styles.subtext}>
           Have a question, want to collaborate, or just want to say hi? Drop me a message
           and I&apos;ll get back to you as soon as I can.
@@ -113,19 +117,34 @@ const ContactSection: React.FC = () => {
                 />
               </div>
               <div className={styles.field}>
-                <label className={styles.label} htmlFor="contact-subject">Subject</label>
+                <label className={styles.label} htmlFor="contact-email">Email</label>
                 <input
-                  id="contact-subject"
-                  type="text"
+                  id="contact-email"
+                  type="email"
                   className={styles.input}
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
-                  placeholder="What's this about?"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="your@email.com"
                   required
                   disabled={status === 'sending'}
                   maxLength={120}
                 />
               </div>
+            </div>
+
+            <div className={styles.field}>
+              <label className={styles.label} htmlFor="contact-subject">Subject</label>
+              <input
+                id="contact-subject"
+                type="text"
+                className={styles.input}
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                placeholder="What's this about?"
+                required
+                disabled={status === 'sending'}
+                maxLength={120}
+              />
             </div>
 
             <div className={styles.field}>

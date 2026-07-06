@@ -12,7 +12,12 @@ export const experiences: ExperienceItem[] = [
     company: 'Manitoba Hydro',
     role: 'Compliance Engineer, EIT',
     date: 'May 2025 - Present',
-    bullets: [],
+    bullets: [
+      'Support Manitoba Hydro’s NERC reliability compliance program, helping ensure the bulk electric system meets mandatory Reliability Standards within the Midwest Reliability Organization (MRO) region',
+      'Coordinate compliance evidence collection, self-certifications, and audit-readiness activities with subject-matter experts across operations, planning, and engineering',
+      'Assess the impact of new and revised NERC standards, translating regulatory requirements into actionable guidance for internal stakeholders',
+      'Build scripts and tooling to streamline compliance tracking, evidence management, and reporting workflows',
+    ],
   },
   {
     id: 'meta-hcl',

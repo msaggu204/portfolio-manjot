@@ -1,0 +1,143 @@
+.section {
+  background: var(--bg-0);
+  padding: var(--section-pad) 0;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 3rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-lg);
+  align-items: stretch;
+}
+
+.grid > * {
+  display: flex;
+}
+
+.grid > * > * {
+  flex: 1;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: 1.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  transition:
+    transform var(--t-med) var(--ease-out),
+    border-color var(--t-med) ease,
+    box-shadow var(--t-med) ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--line-bright);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--text-hi);
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  color: var(--text-low);
+  margin-top: 0.2rem;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.active {
+  color: var(--accent-soft);
+}
+
+.active .statusDot {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.building {
+  color: var(--amber);
+}
+
+.paused {
+  color: var(--text-low);
+}
+
+.description {
+  flex: 1;
+  color: var(--text-mid);
+  font-size: var(--fs-small);
+  line-height: 1.65;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--line);
+}
+
+.link {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--t-fast) ease;
+}
+
+.link:hover {
+  color: var(--accent-soft);
+}

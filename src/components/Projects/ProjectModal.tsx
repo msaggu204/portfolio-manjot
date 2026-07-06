@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './ProjectModal.module.css';
+import SphereBadge from '../SphereBadge/SphereBadge';
 import { ProjectItem } from '../../data/projects';
 
 interface Props {
@@ -83,7 +84,10 @@ const ProjectModal: React.FC<Props> = ({ project, onClose }) => {
               <span className={styles.featuredBadge} aria-label="Featured project">★ Featured</span>
             )}
             <h2 id={titleId} className={styles.title}>{project.title}</h2>
-            <span className={styles.category}>{project.category}</span>
+            <span className={styles.metaRow}>
+              <span className={styles.category}>{project.category}</span>
+              <SphereBadge sphereId={project.sphereId} />
+            </span>
           </div>
         </div>
 

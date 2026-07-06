@@ -11,7 +11,8 @@ export interface ProjectItem {
   link?: string;      // undefined = coming soon
   logo?: string;      // image src
   emoji?: string;     // emoji character (used when no logo image)
-  category: string;
+  category: string;   // tech category (Hardware, Mobile, …)
+  sphereId: string;   // life bucket — see spheres.ts
   featured: boolean;
 }
 
@@ -24,6 +25,7 @@ export const projects: ProjectItem[] = [
       'An embedded system built for Rogue Wave Coffee to automate and optimize the roasting process using a PyTorch-based ML model. The system collects and analyzes real-time data to deliver consistent roasting results, reducing variability by 15%. It features a web-based dashboard for remote monitoring and smart, ML-driven recommendations with a 5-second response time.',
     skills: ['PyTorch', 'Embedded Systems', 'Raspberry Pi', 'Data Analysis', 'Sensors', 'Python', 'UI/UX', 'Microcontrollers', 'Client Work'],
     category: 'Embedded Systems',
+    sphereId: 'uofa',
     featured: true,
   },
   {
@@ -34,6 +36,7 @@ export const projects: ProjectItem[] = [
       'Supported electrical system upgrades and helped lead the team\'s transition to electric vehicle design. Contributed to testing and performance improvements, and developed an internal SharePoint interface to streamline communications and team operations.',
     skills: ['Electrical Systems', 'EV Design', 'PCB Debugging', 'Performance Testing', 'SharePoint Development', 'UI/UX Design', 'Team Collaboration', 'Project Coordination', 'Python'],
     category: 'Hardware',
+    sphereId: 'uofa',
     featured: true,
   },
   {
@@ -45,6 +48,7 @@ export const projects: ProjectItem[] = [
     skills: ['Java', 'Android Studio', 'UML', 'OOP', 'QR Code Integration', 'Unit Testing', 'Git', 'Team Collaboration', 'UI/UX Design'],
     link: 'https://github.com/CMPUT301W24T26/OOPs-I-Pushed-To-Main',
     category: 'Mobile',
+    sphereId: 'uofa',
     featured: true,
   },
   {
@@ -56,6 +60,7 @@ export const projects: ProjectItem[] = [
     skills: ['Python', 'Pandas', 'yFinance', 'Financial Analysis', 'Data Visualization', 'OOP', 'API Integration', 'Error Handling'],
     link: 'https://github.com/msaggu204/StockPicker',
     category: 'Software',
+    sphereId: 'personal',
     featured: false,
   },
   {
@@ -67,6 +72,7 @@ export const projects: ProjectItem[] = [
     skills: ['VHDL', 'FSM Design', 'Datapath & Control', 'Zybo Z7-10', 'Testbenches', 'Digital Logic', 'Simulation', 'Modular Design'],
     link: 'https://github.com/msaggu204/8-bit-CPU/tree/main',
     category: 'Hardware',
+    sphereId: 'uofa',
     featured: false,
   },
   {
@@ -74,10 +80,11 @@ export const projects: ProjectItem[] = [
     title: 'Personal Website',
     logo: websiteLogo,
     description:
-      'A responsive personal portfolio website built with React and TypeScript to showcase engineering projects, technical skills, and experiences. Designed for clarity, accessibility, and performance, the site features smooth animations, custom styling, and project-based content.',
+      'This site — a responsive personal portfolio built with React and TypeScript, designed as an expanding hub for everything I work on. Features a canvas power-grid animation, a token-driven design system, scroll-triggered reveals, and fully data-driven content.',
     skills: ['React', 'TypeScript', 'CSS Modules', 'Responsive Design', 'GitHub Pages', 'Accessibility', 'Animations'],
     link: 'https://msaggu204.github.io/portfolio-manjot/',
     category: 'Web',
+    sphereId: 'personal',
     featured: false,
   },
 ];

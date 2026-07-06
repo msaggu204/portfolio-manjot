@@ -1,0 +1,123 @@
+.wrapper {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.8s var(--ease-out);
+}
+
+.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 16px;
+  padding-top: 6px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-0);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 0 var(--glow);
+  transition: box-shadow 0.6s ease 0.3s;
+}
+
+.visible .dot {
+  box-shadow: 0 0 14px 2px var(--glow);
+}
+
+.line {
+  flex: 1;
+  width: 1px;
+  margin-top: 6px;
+  background: linear-gradient(to bottom, var(--line-bright), var(--line));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.9s var(--ease-out) 0.2s;
+}
+
+.visible .line {
+  transform: scaleY(1);
+}
+
+.wrapper:last-child .line {
+  background: linear-gradient(to bottom, var(--line-bright), transparent);
+}
+
+.content {
+  padding-bottom: clamp(2.5rem, 6vh, 4rem);
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.title {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--text-hi);
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--text-mid);
+  margin-top: 0.2rem;
+}
+
+.badgeSlot {
+  display: inline-flex;
+}
+
+.points {
+  margin: var(--space-md) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.point {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--text-mid);
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  max-width: 68ch;
+}
+
+.point::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrapper {
+    opacity: 1;
+    transform: none;
+  }
+
+  .line {
+    transform: none;
+  }
+}

@@ -1,55 +1,40 @@
-# Manjot Saggu – Portfolio Website
+# Manjot Saggu — Personal Portfolio
 
-This is the source code for my personal portfolio website, built with **React** and deployed using **GitHub Pages**. It showcases my projects, experience, and resume in a responsive and modern layout.
+Personal portfolio of Manjot Saggu, Compliance Engineer (EIT) at Manitoba Hydro.
 
-## 🚀 Tech Stack
+**Live site:** https://msaggu204.github.io/portfolio-manjot/
 
-- React (via Create React App)
-- TypeScript
-- MUI (Material UI)
-- GitHub Pages (for deployment)
+## Highlights
 
-## 📁 Folder Structure
+- ⚡ Animated "power grid" canvas hero — a nod to working on the bulk electric system
+- 🎨 Token-driven dark design system (Space Grotesk / Inter / Fira Code, ember-red gradient brand)
+- 🧩 Fully data-driven content — edit `src/data/*.ts`, never touch components
+- ✨ Scroll-triggered reveals, cursor-tracking project cards, scroll-spy nav — zero animation libraries
+- ♿ Reduced-motion support, focus management, semantic HTML, aria-live form status
 
-- `src/` – React components and layout
-- `public/` – Static assets (including `resume.html`, `favicon`, and resume PDF)
-- `build/` – Production build output (automatically created)
+## Stack
 
-## 🛠️ Available Scripts
+React 18 · TypeScript 5 · Vite 5 · CSS Modules · Vitest · EmailJS · GitHub Pages
 
-In the project directory, you can run:
+## Development
 
-### `npm start`
+```bash
+npm install
+npm start          # dev server
+npm test           # vitest suite
+npm run build      # type-check + production build
+npm run deploy     # build + publish to gh-pages
+```
 
-Runs the app in development mode.  
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Structure
 
-### `npm run build`
+- `src/data/` — all site content (profile, experiences, projects, volunteering)
+- `src/sections/` — homepage sections
+- `src/components/` — reusable UI and animation primitives (`Reveal`, `PowerGrid`, `SectionHeading`, …)
+- `src/styles/variables.css` — design tokens
 
-Builds the app for production to the `build/` folder.
+## Resume
 
-### `npm run deploy`
+Accessible at [/resume.html](https://msaggu204.github.io/portfolio-manjot/resume.html) (embedded PDF viewer).
 
-Deploys the built app to the `gh-pages` branch.  
-The website is hosted at:  
-[https://msaggu204.github.io/portfolio-manjot/](https://msaggu204.github.io/portfolio-manjot/)
-
-## 🔗 Resume Page
-
-Accessible directly at:  
-[https://msaggu204.github.io/portfolio-manjot/resume.html](https://msaggu204.github.io/portfolio-manjot/resume.html)
-
-This page uses an embedded PDF viewer to display my resume.
-
-## ✅ Deployment Notes
-
-This project uses the `gh-pages` package to publish the `build/` folder to the `gh-pages` branch.
-
-Ensure your `package.json` includes:
-
-```json
-"homepage": "https://msaggu204.github.io/portfolio-manjot",
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
+See `CLAUDE.md` for architecture details and extension recipes.
